@@ -51,7 +51,7 @@ const App = () => {
         <Text color="white" fontWeight="bold" marginTop="20" fontSize="35">
           Pomodoro Timer
         </Text>
-        <Text fontWeight="bold" fontSize="7xl" color="white">
+        <Text fontWeight="bold" fontSize="150px" color="white">
           {`${
             Math.floor(time / 60) < 10
               ? `0${Math.floor(time / 60)}`
@@ -61,25 +61,29 @@ const App = () => {
         <Flex>
           <Button
             width="7rem"
-            background="tomato"
+            style={{ backgroundColor: "#ff5b5b" }}
             color="white"
             onClick={toggleTimer}
           >
             {!timerStart ? "Start" : "Pause"}
           </Button>
           <Button
-            background="blue.300"
+            style={{ backgroundColor: "#7070ff" }}
             marginX={5}
             onClick={triggerResetDialog}
           >
             Reset
           </Button>
         </Flex>
-        <Flex marginTop={10}>
+        <Text fontWeight="bold" fontSize="50x" color="white" marginTop={30}>
+          Timer Options:
+        </Text>
+        <Flex>
           {timerOptions.map(({ value, display }) => (
             <Button
+              key={value}
               marginX={4}
-              background="green.300"
+              style={{ backgroundColor: "#72b172" }}
               color="white"
               onClick={() => {
                 setTimerStart(false);
